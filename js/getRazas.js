@@ -3,7 +3,6 @@ $(document).ready(function () {
 
   const domainAnimal = nameAnimal == "Perros" ? "thedogapi" : "thecatapi"; //if ternario
 
-  // var selectorTablaHTML = listAnimals;
   var url = `https://api.${domainAnimal}.com/v1/breeds`;
 
   $.get(url, (response) => {
