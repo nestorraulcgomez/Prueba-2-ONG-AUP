@@ -33,6 +33,7 @@ function generar_galeria_imagenes(
     console.log("response lenght : ", response.length);
     var totalResponse = response.length;
     $.each(response, function (index, element) {
+      console.log("element: ", element);
       if ((index + 1) % numeroColumnasPorFila == 0) {
         indiceFilaActual++;
         filas[indiceFilaActual] = $("<tr></tr>");
@@ -90,28 +91,29 @@ function btnAction(identificadorImagen) {
     "mostrar spiner para reflejar la ejecución de la llamada ajax de fondo"
   );
   $("#ajax-loader-img-" + identificadorImagen).show();
-
+  console.log("id imagen: ", identificadorImagen);
   $.get(getBtnActionURL(), function (response) {
-    //iterar por el único elemento que debería devolver la respuesta
-    $.each(response, function (index, element) {
-      //crear imagen para precargar antes de reemplazar por la existente
-      var newImagen = new Image();
-      newImagen.src = element.url;
+    console.log("response: ", response);
+    const findAnimal = response.find(
+      (animal) => animal.id == identificadorImagen
+    );
+    const breedsAnimal = findAnimal.breeds[0];
+    const weightMetric = breedsAnimal.weight.metric;
+    const heightMetric =
+      breedsAnimal.height && breedsAnimal.height.metric
+        ? breedsAnimal.height.metric
+        : undefined;
+    const lifeSpan = breedsAnimal.life_span;
+    const name = breedsAnimal.name;
 
-      //cuando la imagen ya se encuentra descargada
-      newImagen.onload = function () {
-        $("#imagen-" + identificadorImagen).fadeOut(1000, function () {
-          // se reemplaza la seleccionada, una vez que ya se ha desvanecido, por la nueva ya descargada
-          $("#imagen-" + identificadorImagen).attr("src", element.url);
-
-          // se oculta el spiner
-          $("#ajax-loader-img-" + identificadorImagen).hide();
-
-          // se vuelve a mostrar, pero con la nueva imagen
-          $("#imagen-" + identificadorImagen).fadeIn(2000);
-        });
-      };
-    });
+    console.log("find animal : ", findAnimal);
+    alert(`
+    Peso promedio en Kg : ${weightMetric} 
+    Nombre : ${name}
+    Promedio esperanza de vida : ${lifeSpan}
+    ${heightMetric ? `Estatura promedio en Cms : ${heightMetric}` : ""}
+    `);
+    $("#ajax-loader-img-" + identificadorImagen).hide();
   });
 }
 
