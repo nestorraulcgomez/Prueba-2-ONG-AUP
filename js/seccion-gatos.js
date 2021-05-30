@@ -1,14 +1,13 @@
+// $(document).ready(function() {
 
-$(document).ready(function() {
+//     var nroTotalImagenes = 9;
+//     var nroColumnasPorFila = 3;
+//     var selectorTablaHTML = "#lista-gatos"
+//     var url = "https://api.thecatapi.com/v1/images/search?limit="+nroTotalImagenes
 
-    var nroTotalImagenes = 9;
-    var nroColumnasPorFila = 3;
-    var selectorTablaHTML = "#lista-gatos"
-    var url = "https://api.thecatapi.com/v1/images/search?limit="+nroTotalImagenes
-
-    generar_galeria_imagenes(selectorTablaHTML, nroTotalImagenes, nroColumnasPorFila, url,"Cambiar Imagen");
-});
+//     generar_galeria_imagenes(selectorTablaHTML, nroTotalImagenes, nroColumnasPorFila, url,"Cambiar Imagen");
+// });
 
 function getBtnActionURL() {
-    return "https://api.thecatapi.com/v1/images/search?limit=1";
+  return "https://api.thecatapi.com/v1/images/search?limit=1";
 }

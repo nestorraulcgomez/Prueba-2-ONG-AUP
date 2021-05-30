@@ -4,12 +4,12 @@
     <title>ONG Ayuda a un peludo</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="css/validaciones.css" />
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/estilo.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -38,7 +38,6 @@
           repellat vitae!
         </p>
       </header>
-
       <nav class="navbar navbar-expand-md bg-light">
         <a class="navbar-brand" href="#">
           <img
@@ -51,7 +50,7 @@
 
         <!-- Links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
 
@@ -66,8 +65,8 @@
               Mascotas
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Perros</a>
-              <a class="dropdown-item" href="#">Gatos</a>
+              <a class="dropdown-item" href="seccion-perros.html">Perros</a>
+              <a class="dropdown-item" href="seccion-gatos.html">Gatos</a>
             </div>
           </li>
 
@@ -79,15 +78,46 @@
           </li>
         </ul>
       </nav>
-      <main class="flex-fill">
-        <section>
-          <h2>Contacto</h2>
 
-          <div class="alert alert-success" role="alert">
-            Formulario enviado exitosamente
-          </div>
-        </section>
-      </main>
+      <div id="main">
+        <h1 class="text-center">Inicio de Sesión</h1>
+        <div class="contenido container">
+          <form
+            id="formulario-inicio"
+            name="formulario-inicio"
+            action="formulario-enviado.html"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="fieldUsuario"
+                >Usuario
+                <span class="alert alert-danger" role="alert"></span>
+              </label>
+              <input
+                id="fieldUsuario"
+                class="form-control"
+                type="text"
+                name="fieldUsuario"
+              />
+            </div>
+            <div class="form-group">
+              <label for="fieldPassword"
+                >Contraseña
+                <span class="alert alert-danger" role="alert"></span>
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                id="fieldPassword"
+                name="fieldPassword"
+              />
+            </div>
+            <button type="submit" class="btn btn-success" name="submit">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
       <footer>
         <div class="row bg-dark">
           <div class="col-12 text-center text-warning">
