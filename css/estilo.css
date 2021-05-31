@@ -1,3 +1,10 @@
 #tiempo span {
-    font-weight: normal;
+  font-weight: normal;
+}
+.contenido {
+  padding: 0 30%;
+  margin: 10% 0;
+}
+#btnEnviar {
+  margin: 10px 40%;
 }

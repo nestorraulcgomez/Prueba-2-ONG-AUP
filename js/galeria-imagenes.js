@@ -85,7 +85,7 @@ function generar_galeria_imagenes(
     });
   });
 }
-
+// se cambia la funcion del boton anterior, para que ahora pueda enviar la informacion del perro, por medio de una alerta
 function btnAction(identificadorImagen) {
   console.log(
     "mostrar spiner para reflejar la ejecución de la llamada ajax de fondo"
