@@ -18,7 +18,7 @@ function changeBreed(tabla, apiName) {
     "Ver Detalle"
   );
 }
-
+//
 function getBtnActionURL() {
   const nroTotalImagenes = 9;
   const nameAnimal = $("body > div > main > div > div > section > h2").text();
