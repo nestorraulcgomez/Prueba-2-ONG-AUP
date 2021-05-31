@@ -1,4 +1,6 @@
-
 .error-campo-formulario {
-    border: 2px solid red;
+  border: 2px solid red;
+}
+.has-error {
+  border: 2px solid red;
 }

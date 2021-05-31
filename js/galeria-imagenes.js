@@ -52,7 +52,7 @@ function generar_galeria_imagenes(
           element.url +
           '" class="img-thumbnail" style="width:200px;height:150px;" /><br/>';
         registroHTML +=
-          '    <button class="btn btn-info" onclick="javascript:btnAction(\'' +
+          '    <button class="btn btn-dark" onclick="javascript:btnAction(\'' +
           element.id +
           "');\"  >";
         registroHTML +=
