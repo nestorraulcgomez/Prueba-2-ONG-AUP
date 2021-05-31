@@ -2,7 +2,6 @@ $(document).ready(function () {
   // ocultar todos los div que tengan class "alert" y se encuentren
   // dentro de un elemento cuyo id es "formulario-contacto".
   $("#formulario-contacto span.alert").hide();
-  $("#formulario-inicio span.alert").hide();
 
   // función encargada de verificar si el valor del parámetro fieldValue
   // es vacío y mostrar o esconder, según corresponda, el mensaje en el
@@ -24,25 +23,6 @@ $(document).ready(function () {
       return true;
     }
   }
-  function validarUsuario(fieldValue, fieldId) {
-    if (fieldValue.trim().length < 8) {
-      console.log(fieldValue.trim().length);
-      $("#" + fieldId).addClass("error-campo-formulario");
-      $("label[for='" + fieldId + "'] span.alert").html(
-        "El campo debe tener al menos 8 caracteres"
-      );
-      $("label[for='" + fieldId + "'] span.alert").show();
-      $("label[for='" + fieldId + "'] span.alert").fadeOut(5000);
-
-      return false;
-    } else {
-      $("#" + fieldId).removeClass("error-campo-formulario");
-      $("label[for='" + fieldId + "'] span.alert").hide();
-
-      return true;
-    }
-  }
-
   // asocia en el evento blur del elemento de formulario con id "fieldTipoContacto" la llamada a la
   // función de validar si el campo es vacío.
   $("#fieldTipoContacto").change(function () {
@@ -115,27 +95,6 @@ $(document).ready(function () {
     );
 
     validarCampoVacio(valorIngresado, "fieldComentario");
-  });
-
-  $("#fieldPassword").blur(function () {
-    valorIngresado = $(this).val();
-    console.log(
-      "El usuario ha dejado el campo contraseña con el valor: '" +
-        valorIngresado +
-        "'"
-    );
-    validarCampoVacio(valorIngresado, "fieldPassword");
-  });
-
-  $("#fieldUsuario").blur(function () {
-    valorIngresado = $(this).val();
-    console.log(
-      "El usuario ha dejado el campo nombre de usuario con el valor: '" +
-        valorIngresado +
-        "'"
-    );
-    validarUsuario(valorIngresado, "fieldUsuario");
-    validarCampoVacio(valorIngresado, "fieldUsuario");
   });
 
   $(":submit").click(function (event) {
