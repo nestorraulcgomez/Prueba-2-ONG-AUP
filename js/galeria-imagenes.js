@@ -50,7 +50,7 @@ function generar_galeria_imagenes(
           element.id +
           '" src="' +
           element.url +
-          '" class="img-thumbnail" style="width:200px;height:150px;" /><br/>';
+          '" class="img-thumbnail img-fluid" style="width:200px;height:150px;" /><br/>';
         registroHTML +=
           '    <button class="btn btn-dark" onclick="javascript:btnAction(\'' +
           element.id +
