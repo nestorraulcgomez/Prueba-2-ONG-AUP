@@ -1,8 +1,8 @@
 // se crea nueva funcion a partir de la anterior en documento seccion gatos y seccion perros, para así ocupar solo una
 // esta recibe parametros desde la misma tabla
 function changeBreed(tabla, apiName) {
-  const nroTotalImagenes = 10;
-  const nroColumnasPorFila = 5;
+  const nroTotalImagenes = 9;
+  const nroColumnasPorFila = 3;
   const selectorTablaHTML = `#${tabla}`;
   const currentValue = $("#selectRazas").val();
   const breedId = currentValue != "Random" ? `&breed_id=${currentValue}` : "";
@@ -20,7 +20,7 @@ function changeBreed(tabla, apiName) {
 }
 
 function getBtnActionURL() {
-  const nroTotalImagenes = 10;
+  const nroTotalImagenes = 9;
   const nameAnimal = $("body > div > main > div > div > section > h2").text();
   const currentValue = $("#selectRazas").val();
   const domainAnimal = nameAnimal == "Perros" ? "thedogapi" : "thecatapi"; //if ternario
